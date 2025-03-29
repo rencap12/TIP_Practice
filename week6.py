@@ -166,4 +166,3 @@ song3.next = song4
 song4.next = song2
 
 print(loop_length(song1))
-            
