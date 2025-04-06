@@ -91,7 +91,21 @@ print(can_attend([1, 3, 7, 10, 12], 12))
 print(can_attend([1, 3, 7, 10, 12], 5))
 
 def my_sqrt(x):
-    pass
+    def bin_search(low, high):
+        if low > high:
+            return high
+        mid = (low + high) // 2
+
+        if mid*mid == x:
+            return mid
+        elif mid*mid < x:
+            return bin_search(mid + 1, high)
+        else:
+            return bin_search(low, mid - 1)
+        
+    if x < 2:
+        return x
+    return bin_search(1, x // 2)
 
 # Test cases
 print(my_sqrt(4))   # 2
